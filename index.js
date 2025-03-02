@@ -34,7 +34,7 @@ const server = require("http").createServer(app);
 // 1st arg is what our socketIO will be hosted on
 // 2nd arg has cors
 const io = new Server(server, {
-    cors: { credentials: true,
+    cors: { credentials: true, methods: ["GET", "POST"],
         origin: ["https://todo-redis-test.netlify.app/", "https://todo-app-backend-production-8433.up.railway.app/socket.io/?EIO=4&transport=polling&t=yik2wl0u"] },
 });
 

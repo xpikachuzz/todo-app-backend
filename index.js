@@ -17,7 +17,7 @@ const { initialize, emitComments } = require("./controllers/socketControllers");
 // Set up CORS
 app.use(cors({
     credentials: true,
-    origin: "http://localhost:3000"
+    origin: "https://todo-redis-test.netlify.app/"
 }));
 
 // Set json for getting data from request body
@@ -35,7 +35,7 @@ const server = require("http").createServer(app);
 // 2nd arg has cors
 const io = new Server(server, {
     cors: { credentials: true,
-        origin: "http://localhost:3000" },
+        origin: "https://todo-redis-test.netlify.app/" },
 });
 
 redisClient.connect().catch(console.error)

@@ -17,7 +17,7 @@ const { initialize, emitComments } = require("./controllers/socketControllers");
 // Set up CORS
 app.use(cors({
     credentials: true,
-    origin: "https://todo-redis-test.netlify.app/"
+    origin: ["https://todo-redis-test.netlify.app/", "https://todo-app-backend-production-8433.up.railway.app/socket.io/?EIO=4&transport=polling&t=yik2wl0u"]
 }));
 
 // Set json for getting data from request body
@@ -35,7 +35,7 @@ const server = require("http").createServer(app);
 // 2nd arg has cors
 const io = new Server(server, {
     cors: { credentials: true,
-        origin: "https://todo-redis-test.netlify.app/" },
+        origin: ["https://todo-redis-test.netlify.app/", "https://todo-app-backend-production-8433.up.railway.app/socket.io/?EIO=4&transport=polling&t=yik2wl0u"] },
 });
 
 redisClient.connect().catch(console.error)
